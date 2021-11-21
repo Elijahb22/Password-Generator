@@ -1,31 +1,24 @@
 // Assignment code here
-const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
-const symbols = "!@#$%^&*_-+=";
+var lowercasealpha = {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z};
+var uppercassalpha = {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z};
+var numbers = {123456789:any};
+var specilchar = [!, "", #, $, %, &, '', (, ),  *, +, =, -, ., /, :, ;, <, >, ?, @, \, ^, _, |, ~];
 
-// Get references to the #generate element
-const passwordText = document.querySelector("#password");
-const length = document.querySelector("#length");
-const incNumbers = document.querySelector("#numbers");
-const incSymbols = document.querySelector("#symbols")
-const generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-const generatePassword = (length, characters) => {
-  let password = "";
-  for (let i = 0; i < length; i++) {
-    password += characters.charat(
-      math.floor(Math.random() * characters.length)
-    );
-  }
-
-  //passwordText.value = password;
+function generatePassword() {
+  
 }
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password")
+
+  passwordText.value = password;
+}
+
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword => {
-  let characters = alpha;
-  incNumbers ? (characters += numbers) : "";
-  incSymbols ? (characters += symbols) : "";
-  passwordText.value = generatePassword(length.value, characters);
-});
+generateBtn.addEventListener("click", writePassword);
