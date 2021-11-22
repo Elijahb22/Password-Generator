@@ -2,7 +2,7 @@
 var lowerCaseAlpha = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm','n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 var upperCaseAlpha = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numbers = [ '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialChar = ['!', '#', '$', , ':' , ';', '<', '>', '?', '@', '^', '_' , '|', '~'];
+var specialChar = ['!', '?', '/', '#', '$', '+', ':' , ';', '<', '>', '?', '@', '^', '_' , '|', '~'];
 
 function addPasswordOptions() {
   // variable to store length for user input
@@ -77,7 +77,7 @@ function generatePassword() {
     possibleCharacters = possibleCharacters.concat(upperCaseAlpha);
     guaranteedCharacters.push(getRandom(upperCaseAlpha));
   }
-    // For loop to iterate over the password length from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
+    // For loop to iterate over the password length from the options object and selecting possible characters
     for (var i = 0; i < options.length; i++) {
       var possibleCharacter = getRandom(possibleCharacters);
       result.push(possibleCharacter);
