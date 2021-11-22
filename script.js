@@ -77,7 +77,17 @@ function generatePassword() {
     possibleCharacters = possibleCharacters.concat(upperCaseAlpha);
     guaranteedCharacters.push(getRandom(upperCaseAlpha));
   }
-
+    // For loop to iterate over the password length from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
+    for (var i = 0; i < options.length; i++) {
+      var possibleCharacter = getRandom(possibleCharacters);
+      result.push(possibleCharacter);
+    }
+    // Mix in at least one of each guaranteed character in the result
+    for (var i = 0; i < guaranteedCharacters.length; i++) {
+      result[i] = guaranteedCharacters[i];
+    }
+    // Transform the result into a string and pass into writePassword
+    return result.join('');
 };
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
