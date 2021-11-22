@@ -57,6 +57,27 @@ function generatePassword() {
    var possibleCharacters = [];
    // var to contain one of each type of chosen character to ensure each will be used
    var guaranteedCharacters = [];
+   // if statement that adds the array of special characters into var of possible characters 
+   if (options.addSpecialChar) {
+    possibleCharacters = possibleCharacters.concat(specialChar);
+    guaranteedCharacters.push(getRandom(specialChar));
+  }
+  // if statement that adds array of numeric characters into var of possible characters 
+  if (options.addNumbers) {
+    possibleCharacters = possibleCharacters.concat(numbers);
+    guaranteedCharacters.push(getRandom(numbers));
+  }
+  // if statement that adds array of lowercase characters into var of possible characters 
+  if (options.addLowerCaseAlpha) {
+    possibleCharacters = possibleCharacters.concat(lowerCaseAlpha);
+    guaranteedCharacters.push(getRandom(lowerCaseAlpha));
+  }
+  // if statement that adds array of uppercase characters into array of possible characters 
+  if (options.addUpperCaseAlpha) {
+    possibleCharacters = possibleCharacters.concat(upperCaseAlpha);
+    guaranteedCharacters.push(getRandom(upperCaseAlpha));
+  }
+
 };
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
