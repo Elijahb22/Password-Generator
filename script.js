@@ -38,73 +38,26 @@ function addPasswordOptions() {
   };
   return passwordoptions;
 }
-
+// radomized password
 function getRandom(list) {
   var randomnumber = getRandomArbitrary(0,list.length);
   return list[randomnumber]; 
 }
+//Gives ramozied password into an integer
 function getRandomArbitrary(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); 
 }
-
-
 function generatePassword() {
   var options = addPasswordOptions();
-   // Variable to store password as it's being concatenated
+   // Vari to store password as it's being concatenated
    var result = [];
-
-   // Array to store types of characters to include in password
+   // Var to store types of characters to include in password
    var possibleCharacters = [];
- 
-   // Array to contain one of each type of chosen character to ensure each will be used
+   // var to contain one of each type of chosen character to ensure each will be used
    var guaranteedCharacters = [];
- 
-   // Conditional statement that adds array of special characters into array of possible characters based on user input
-   // Push new random special character to guaranteedCharacters
-   if (options.addSpecialChar) {
-     possibleCharacters = possibleCharacters.concat(specialChar);
-     guaranteedCharacters.push(getRandom(specialChar));
-   }
- 
-   // Conditional statement that adds array of numeric characters into array of possible characters based on user input
-   // Push new random special character to guaranteedCharacters
-   if (options.addNumbers) {
-     possibleCharacters = possibleCharacters.concat(numbers);
-     guaranteedCharacters.push(getRandom(numbers));
-   }
- 
-   // Conditional statement that adds array of lowercase characters into array of possible characters based on user input
-   // Push new random lower-cased character to guaranteedCharacters
-   if (options.addLowerCaseAlpha) {
-     possibleCharacters = possibleCharacters.concat(lowerCaseAlpha);
-     guaranteedCharacters.push(getRandom(lowerCaseAlpha));
-   }
- 
-   // Conditional statement that adds array of uppercase characters into array of possible characters based on user input
-   // Push new random upper-cased character to guaranteedCharacters
-   if (options.addUpperCaseAlpha) {
-     possibleCharacters = possibleCharacters.concat(upperCaseAlpha);
-     guaranteedCharacters.push(getRandom(upperCaseAlpha));
-   }
- 
-   // For loop to iterate over the password length from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
-   for (var i = 0; i < options.length; i++) {
-     var possibleCharacter = getRandom(possibleCharacters);
-     result.push(possibleCharacter);
-   }
- 
-   // Mix in at least one of each guaranteed character in the result
-   for (var i = 0; i < guaranteedCharacters.length; i++) {
-     result[i] = guaranteedCharacters[i];
-   }
- 
-   // Transform the result into a string and pass into writePassword
-   return result.join('');
- 
-}
-
+};
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
