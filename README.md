@@ -4,6 +4,8 @@ The Password Generator is where users can generate a random password between 8-1
 - The user is able to choose whether or not they want uppercase letter, lowercase letters, numbers and special characters
 - Passwords to be random 
 - UI
+# Try it Out
+ Here is the link: https://elijahb22.github.io/Password-Generator/
 # Languages and Technologies 
 This application is wrote in Javascript, HTML, and CSS.
 # Contributors
